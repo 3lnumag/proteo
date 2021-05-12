@@ -42,7 +42,7 @@ class ScaleManoeuvre(models.Model):
                             states=STATES,
                             ondelete='restrict')
    scale = fields.Selection(
-      [('Teotihuacan', 'Teotihuacan'), ('Teotihuacan', 'Xalostoc')], 'Planta',
+      [('Teotihuacan', 'Teotihuacán'), ('Xalostoc', 'Xalostoc')], 'Planta',
       default=None, required=True, states=STATES)
 
    @api.onchange('business_line_id')
@@ -175,9 +175,9 @@ class ScaleManoeuvre(models.Model):
                  'x-api-key': api_key,
                  }
       lob = {
-         'Planta Teotihuacán': 'Matrix',
-         'Planta Xalostoc': 'Matrix',
-         'Oficinas Xalostoc': 'Matrix'
+         'Planta Teotihuacán': 'Teotihuacan',
+         'Planta Xalostoc': 'Xalostoc',
+         'Oficinas Xalostoc': 'Xalostoc'
       }
       type = {'entrance': 'UNLOAD', 'exit': 'LOAD'}
 
@@ -191,7 +191,7 @@ class ScaleManoeuvre(models.Model):
       elif option == 'initial':
          params = {
             'key': self.reference,
-            'location': lob.get(self.business_line_id.name),
+            'location': self.scale,
             'secKey': 'M-Peso Inicial',
             'type': type.get(self.type)
          }

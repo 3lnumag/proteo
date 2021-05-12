@@ -12,13 +12,16 @@
             </xpath>
             <xpath expr="//group[1]" position="before">
                 <group>
-                    <field name="serie" attrs="{'invisible':[('move_type','!=','in_invoice')]}"/>
-                    <field name="folio" attrs="{'invisible':[('move_type','!=','in_invoice')]}"/>
+                    <field name="serie" attrs="{'invisible':[('move_type','not in',['in_invoice'])]}"/>
+                    <field name="folio" attrs="{'invisible':[('move_type','not in',['in_invoice'])]}"/><!--
+                    <field name="policy" attrs="{'invisible':[('move_type','not in',['in_invoice', 'in_refund'])]}"/>
+                    <field name="usage" attrs="{'invisible':[('move_type','not in',['in_invoice', 'in_refund'])]}"/>
+                    <field name="method_id" attrs="{'invisible':[('move_type','not in',['in_invoice', 'in_refund'])]}"/>-->
                 </group>
             </xpath>
             <xpath expr="//header">
                 <button name="carga" string="Carga de XML" type="object"
-                        attrs="{'invisible':['|','|',('move_type','!=','in_invoice'),('serie','!=',False),('folio','!=',False)]}"
+                        attrs="{'invisible':['|','|',('move_type','not in',['in_invoice']),('serie','!=',False),('folio','!=',False)]}"
                         class="oe_highlight"/>
             </xpath>
         </field>

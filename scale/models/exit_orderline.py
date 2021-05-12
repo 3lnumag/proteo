@@ -63,9 +63,9 @@ class ExitOrderLine(models.Model):
                  'x-api-key': api_key,
                  }
       lob = {
-         'Planta Teotihuacán': 'Matrix',
-         'Planta Xalostoc': 'Matrix',
-         'Oficinas Xalostoc': 'Matrix'
+         'Planta Teotihuacán': 'Teotihuacan',
+         'Planta Xalostoc': 'Xalostoc',
+         'Oficinas Xalostoc': 'Xalostoc'
       }
       type = {'entrance': 'UNLOAD', 'exit': 'LOAD'}
 
