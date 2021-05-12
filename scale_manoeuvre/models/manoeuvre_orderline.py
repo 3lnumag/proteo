@@ -59,7 +59,7 @@ class ManoeuvreOrderLine(models.Model):
 
       params = {
          'key': self.order_id.reference,
-         'location': 'Matrix',
+         'location': self.order_id.scale,
          'secKey': 'M-' + str(self.id),
          'type': type.get('entrance')
       }
