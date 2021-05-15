@@ -9,6 +9,7 @@ from datetime import datetime
 import requests
 import json
 import logging
+import datetime as dt
 
 _logger = logging.getLogger(__name__)
 
@@ -82,6 +83,7 @@ class ScaleExit(models.Model):
    rel_unit_name = fields.Char(related="unit_id.name", string='Unidad',
                                readonly=True)
    initial_weight = fields.Float('Peso Inicial', digits='Product Unit of Measure', readonly=True)
+   initial_weight_date = fields.Datetime("Fecha de pesada inicial", readonly=True)
    photo_url = fields.Char("URL", readonly=True, default='')
    reference = fields.Char('Referencia', readonly=True)
 
@@ -212,10 +214,16 @@ class ScaleExit(models.Model):
                  'x-api-key': api_key,
                  }
       lob = {
-         'Planta Teotihuacán': 'Teotihuacan',
-         'Planta Xalostoc': 'Xalostoc',
-         'Oficinas Xalostoc': 'Xalostoc'
+         'Planta Teotihuacán': 'Matrix',
+         'Planta Xalostoc': 'Matrix',
+         'Oficinas Xalostoc': 'Matrix'
       }
+
+      # lob = {
+      #    'Planta Teotihuacán': 'Teotihuacan',
+      #    'Planta Xalostoc': 'Xalostoc',
+      #    'Oficinas Xalostoc': 'Xalostoc'
+      # }
 
       type = {'entrance': 'UNLOAD', 'exit': 'LOAD'}
 
@@ -245,6 +253,10 @@ class ScaleExit(models.Model):
       _logger.info(data)
 
       if response.status_code == requests.codes.ok:
+         if data.get('date'):
+            date_obj = dt.datetime.strptime(data.get('date'),
+                                            '%Y-%m-%dT%H:%M:%S.%f')
+            self.initial_weight_date = date_obj
          self.initial_weight = data.get('tareWeight', 0.0)
          self.photo_url = data.get('photoUrl', '')
          self.state = 'assigned'

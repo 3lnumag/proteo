@@ -42,8 +42,11 @@ class ScaleManoeuvre(models.Model):
                             states=STATES,
                             ondelete='restrict')
    scale = fields.Selection(
-      [('Teotihuacan', 'Teotihuacán'), ('Xalostoc', 'Xalostoc')], 'Planta',
+      [('Matrix', 'Teotihuacán'), ('Matrix', 'Xalostoc')], 'Planta',
       default=None, required=True, states=STATES)
+   # scale = fields.Selection(
+   #    [('Teotihuacan', 'Teotihuacán'), ('Xalostoc', 'Xalostoc')], 'Planta',
+   #    default=None, required=True, states=STATES)
 
    @api.onchange('business_line_id')
    def _resetOrder(self):
@@ -174,11 +177,6 @@ class ScaleManoeuvre(models.Model):
       headers = {'content-type': 'application/json',
                  'x-api-key': api_key,
                  }
-      lob = {
-         'Planta Teotihuacán': 'Teotihuacan',
-         'Planta Xalostoc': 'Xalostoc',
-         'Oficinas Xalostoc': 'Xalostoc'
-      }
       type = {'entrance': 'UNLOAD', 'exit': 'LOAD'}
 
       if option == 'close':

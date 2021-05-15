@@ -11,15 +11,23 @@
                                 <span>NO. DE FOLIO:</span><span t-field="doc.name" class="ml-1"/>
                             </h2>
                         </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <strong>Creado el:</strong><span t-field="doc.create_date" class="ml-1"/>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-6">
-                                <strong>Fecha de báscula:</strong><span t-field="doc.create_date" class="ml-1"/>
+                                <strong>Creado por:</strong><span t-field="doc.create_uid" class="ml-1"/>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-6">
                                 <div>
                                     <strong>Chofer:</strong><span t-field="doc.driver_id" class="ml-1"/>
+                                </div>
+                                <div>
+                                    <strong>Vehículo:</strong><span t-field="doc.vehicle_id" class="ml-1"/>
                                 </div>
                                 <div>
                                     <strong>Matrícula:</strong><span t-field="doc.rel_license_plate" class="ml-1"/>
@@ -31,6 +39,17 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div>
+                                    <strong>Peso inicial:</strong><span t-field="doc.initial_weight" class="ml-1"/>
+                                    <span t-field="doc.unit_id.name" class="pr-1"/>
+                                </div>
+                                <div>
+                                    <strong>Fecha del peso inicial:</strong><span t-field="doc.initial_weight_date" class="ml-1"/>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <table class="table mt-5">
                                 <thead>
@@ -39,6 +58,7 @@
                                         <th scope="col">PESO NETO</th>
                                         <th scope="col">PESO TARA</th>
                                         <th scope="col">PESO BRUTO</th>
+                                        <th scope="col">FECHA DE PESADA</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,6 +75,9 @@
                                             </td>
                                             <td>
                                                 <span t-field="line.gross_weight"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.weight_date"/>
                                             </td>
                                         </tr>
                                     </t>

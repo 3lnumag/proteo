@@ -64,10 +64,17 @@ class ScaleOrderLine(models.Model):
                  'x-api-key': api_key,
                  }
       lob = {
-         'Planta Teotihuacán': 'Teotihuacan',
-         'Planta Xalostoc': 'Xalostoc',
-         'Oficinas Xalostoc': 'Xalostoc'
+         'Planta Teotihuacán': 'Matrix',
+         'Planta Xalostoc': 'Matrix',
+         'Oficinas Xalostoc': 'Matrix'
       }
+
+      # lob = {
+      #    'Planta Teotihuacán': 'Teotihuacan',
+      #    'Planta Xalostoc': 'Xalostoc',
+      #    'Oficinas Xalostoc': 'Xalostoc'
+      # }
+
       type = {'entrance': 'UNLOAD', 'exit': 'LOAD'}
 
       params = {
