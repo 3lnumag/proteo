@@ -13,12 +13,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-6">
-                                <strong>Creado el:</strong><span t-field="doc.create_date" class="ml-1"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <strong>Creado por:</strong><span t-field="doc.create_uid" class="ml-1"/>
+                                <strong>Proveedor:</strong><span t-field="doc.rel_partner" class="ml-1"/>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -35,7 +30,10 @@
                             </div>
                             <div class="col-6">
                                 <div>
-                                    <strong>Proveedor:</strong><span t-field="doc.rel_partner" class="ml-1"/>
+                                    <strong>Creado el:</strong><span t-field="doc.create_date" class="ml-1"/>
+                                </div>
+                                <div>
+                                    <strong>Creado por:</strong><span t-field="doc.create_uid" class="ml-1"/>
                                 </div>
                             </div>
                         </div>
@@ -46,7 +44,8 @@
                                     <span t-field="doc.unit_id.name" class="pr-1"/>
                                 </div>
                                 <div>
-                                    <strong>Fecha del peso inicial:</strong><span t-field="doc.initial_weight_date" class="ml-1"/>
+                                    <strong>Fecha del peso inicial:</strong><span t-field="doc.initial_weight_date"
+                                                                                  class="ml-1"/>
                                 </div>
                             </div>
                         </div>

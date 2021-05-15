@@ -9,6 +9,7 @@ from datetime import datetime
 import requests
 import json
 import logging
+import datetime as dt
 
 _logger = logging.getLogger(__name__)
 
@@ -37,13 +38,14 @@ class ScaleManoeuvre(models.Model):
                            default=None, required=True, states=STATES)
 
    business_line_id = fields.Many2one('lob', 'Línea de negocio', default=None,
-                            required=True,
-                            domain="[('scale_manoeuvre','=',True)]",
-                            states=STATES,
-                            ondelete='restrict')
+                                      required=True,
+                                      domain="[('scale_manoeuvre','=',True)]",
+                                      states=STATES,
+                                      ondelete='restrict')
    scale = fields.Selection(
       [('Matrix', 'Teotihuacán'), ('Matrix', 'Xalostoc')], 'Planta',
       default=None, required=True, states=STATES)
+
    # scale = fields.Selection(
    #    [('Teotihuacan', 'Teotihuacán'), ('Xalostoc', 'Xalostoc')], 'Planta',
    #    default=None, required=True, states=STATES)
@@ -73,6 +75,8 @@ class ScaleManoeuvre(models.Model):
    initial_weight = fields.Float('Peso inicial',
                                  digits='Product Unit of Measure',
                                  readonly=True)
+   initial_weight_date = fields.Datetime("Fecha de pesada inicial",
+                                         readonly=True)
    photo_url = fields.Char("URL", readonly=True, default='')
    reference = fields.Char('Referencia', readonly=True)
 
@@ -126,8 +130,10 @@ class ScaleManoeuvre(models.Model):
       for record in self:
          if record.name == '/' and vals.get('state') == 'assigned':
             seq = record.env['ir.sequence']
-            business_line_id = vals.get('business_line_id') or record.business_line_id.id
-            code = record.env['lob'].browse(business_line_id).manoeuvre_seq_id.code
+            business_line_id = vals.get(
+               'business_line_id') or record.business_line_id.id
+            code = record.env['lob'].browse(
+               business_line_id).manoeuvre_seq_id.code
             if code:
                record.name = seq.next_by_code(code)
             else:
@@ -202,6 +208,10 @@ class ScaleManoeuvre(models.Model):
       _logger.info(data)
 
       if response.status_code == requests.codes.ok:
+         if data.get('date'):
+            date_obj = dt.datetime.strptime(data.get('date'),
+                                            '%Y-%m-%dT%H:%M:%S.%f')
+            self.initial_weight_date = date_obj
          peso = data.get('grossWeight',
                          0.0) if self.type == 'entrance' else data.get(
             'tareWeight', 0.0)

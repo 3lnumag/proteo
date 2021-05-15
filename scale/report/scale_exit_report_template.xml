@@ -52,7 +52,7 @@
                         <div class="row mt-4">
                             <div class="col-6">
                                 <p>Chofer: <span t-field="doc.driver_id"/><br/>
-                                Matrícula: <span t-field="doc.rel_license_plate"/></p>
+                                    Matrícula: <span t-field="doc.rel_license_plate"/></p>
                             </div>
                             <div class="col-6">
                                 <p>Cliente: <span t-field="doc.rel_partner"/></p>
@@ -65,6 +65,7 @@
                                     <th scope="col">PESO NETO</th>
                                     <th scope="col">PESO TARA</th>
                                     <th scope="col">PESO BRUTO</th>
+                                    <th scope="col">FECHA DE PESADA</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,11 +83,14 @@
                                         <td>
                                             <span t-field="line.gross_weight"/>
                                         </td>
+                                        <td>
+                                            <span t-field="line.weight_date"/>
+                                        </td>
                                     </tr>
                                 </t>
                             </tbody>
                         </table>
-                       <div class="float-right mt-4"
+                        <div class="float-right mt-4"
                              style="color:#000;font-weight:bold;font-size:16px;">
                             <span class="mr-2">Peso neto total: </span>
                             <span t-field="doc.total_netWeight"/>
