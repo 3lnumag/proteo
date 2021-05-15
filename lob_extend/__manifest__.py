@@ -15,7 +15,7 @@
     'category': 'Uncategorized',
     'version': '14.0.1',
 
-    'depends': ['sale_management', 'purchase', 'product', 'lob', 'contacts', 'sale_stock', 'mrp'],
+    'depends': ['sale_management', 'purchase', 'product', 'lob', 'contacts', 'sale_stock', 'mrp', 'lob_account'],
 
     'data': [
         'security/groups.xml',
