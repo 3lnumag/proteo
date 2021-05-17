@@ -77,6 +77,8 @@ class AccountMove(models.Model):
             method = self.env['l10n_mx_edi.payment.method'].search([('code', '=', cfdi_infos.get('method'))])
             if method:
                 move.update({'method_id': method.id})
+            else:
+                move.update({'method_id': None})
 
     serie = fields.Char(string='Serie',
                         copy=False, readonly=True,
