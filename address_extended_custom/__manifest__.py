@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Custom product_unspsc",
+    'name': "Custom address_extend",
 
-    'summary': """Traducción del nombre del campo a código SAT""",
+    'summary': """Traducción de campos address_extended""",
 
     'description': """
     """,
@@ -14,7 +14,7 @@
     'category': 'Uncategorized',
     'version': '14.0.1',
 
-    'depends': ['product_unspsc'],
+    'depends': ['base_address_extended'],
 
     'data': [
     ],
