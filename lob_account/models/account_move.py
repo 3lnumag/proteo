@@ -81,17 +81,17 @@ class AccountMove(models.Model):
             else:
                 move.update({'method_id': None})
 
-    serie = fields.Char(string='Serie',
+    serie = fields.Char(string='Serie (XML)',
                         copy=False, readonly=True,
                         compute='_compute_folio', store=True)
-    folio = fields.Char(string='Folio',
+    folio = fields.Char(string='Folio (XML)',
                         copy=False, readonly=True,
                         compute='_compute_folio', store=True)
-    uuid = fields.Char(string='Uudi',
+    uuid = fields.Char(string='Folio Fiscal (UUID XML)',
                        copy=False, readonly=True,
                        compute='_compute_folio', store=True)
 
-    policy = fields.Selection(string='Politica de pago',
+    policy = fields.Selection(string='Politica de pago (XML)',
                               selection=[('PPD', 'PPD'), ('PUE', 'PUE')],
                               readonly=True, compute='_compute_folio', store=True)
 
@@ -122,7 +122,7 @@ class AccountMove(models.Model):
             ('D10', 'Pagos por servicios educativos (colegiaturas)'),
             ('P01', 'Por definir'),
         ],
-        string="Uso",
+        string="Uso (XML)",
         help="Utilizado en CFDI 3.3 para indicar la clave del uso que le dará el receptor a esta factura. Este "
              "valor es definido por el cliente.\nNota: No es motivo de cancelación si la clave configurada no corresponde con el uso "
              "que le dará el receptor del documento.", compute='_compute_folio', readonly=True,
@@ -130,17 +130,17 @@ class AccountMove(models.Model):
 
     method_id = fields.Many2one(
         'l10n_mx_edi.payment.method',
-        string="Forma de pago", readonly=True,
+        string="Forma de pago (XML)", readonly=True,
         help='Indica la forma en que se pagó o se pagará la factura, donde las opciones podrían ser: '
              'Tarjeta de Crédito, etc. Deje vacía si no conoce la forma de pago y el XML mostrará "No Identificado".',
         store=True)
 
-    total = fields.Monetary(string='Total', store=True, readonly=True,
+    total = fields.Monetary(string='Total (XML)', store=True, readonly=True,
         compute='_compute_folio')
 
     _sql_constraints = [
         ('uuid_unique', 'UNIQUE(uuid)',
-         'Uuid existente')
+         'Folio Fiscal UUID existente')
     ]
 
     def carga(self):
