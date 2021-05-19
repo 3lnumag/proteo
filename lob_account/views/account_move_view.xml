@@ -22,7 +22,7 @@
                 </group>
             </xpath>
             <xpath expr="//header">
-                <button name="carga" string="XML a EDI" type="object"
+                <button name="carga" string="Carga XML" type="object"
                         attrs="{'invisible':['|','|',('move_type','not in',['in_invoice', 'in_refund']),('serie','!=',False),('folio','!=',False)]}"
                         class="oe_highlight"/>
             </xpath>
