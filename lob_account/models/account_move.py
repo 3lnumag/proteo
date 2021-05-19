@@ -87,7 +87,7 @@ class AccountMove(models.Model):
     folio = fields.Char(string='Folio (XML)',
                         copy=False, readonly=True,
                         compute='_compute_folio', store=True)
-    uuid = fields.Char(string='Folio Fiscal (UUID XML)',
+    uuid = fields.Char(string='Folio Fiscal (XML)',
                        copy=False, readonly=True,
                        compute='_compute_folio', store=True)
 
@@ -140,7 +140,7 @@ class AccountMove(models.Model):
 
     _sql_constraints = [
         ('uuid_unique', 'UNIQUE(uuid)',
-         'Folio Fiscal UUID existente')
+         'Folio Fiscal (UUID) existente')
     ]
 
     def carga(self):
