@@ -72,7 +72,8 @@ class AccountMove(models.Model):
                          'folio': cfdi_infos.get('folio'),
                          'uuid': cfdi_infos.get('uuid'),
                          'policy': cfdi_infos.get('policy'),
-                         'usage': cfdi_infos.get('usage')
+                         'usage': cfdi_infos.get('usage'),
+                         'total': cfdi_infos.get('amount_total')
                          })
             method = self.env['l10n_mx_edi.payment.method'].search([('code', '=', cfdi_infos.get('method'))])
             if method:
@@ -133,6 +134,9 @@ class AccountMove(models.Model):
         help='Indica la forma en que se pagó o se pagará la factura, donde las opciones podrían ser: '
              'Tarjeta de Crédito, etc. Deje vacía si no conoce la forma de pago y el XML mostrará "No Identificado".',
         store=True)
+
+    total = fields.Monetary(string='Total', store=True, readonly=True,
+        compute='_compute_folio')
 
     _sql_constraints = [
         ('uuid_unique', 'UNIQUE(uuid)',
