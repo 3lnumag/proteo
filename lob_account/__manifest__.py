@@ -24,6 +24,7 @@
         'views/res_partner_view.xml',
         'views/account_journal_view.xml',
         'views/l10n_mx_edi_report_invoice.xml',
+        'report/lobextend_reporting_views.xml',
         'wizard/document_wizard.xml',
     ],
 
