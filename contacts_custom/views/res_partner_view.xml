@@ -5,7 +5,7 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group[1]/group[1]/span[1]" position="replace">
+            <xpath expr="//span[@name='address_name']" position="replace">
                 <span class="o_form_label o_td_label" name="address_name">
                     <b attrs="{'invisible': [('type', '!=', 'contact')]}">Dirección de compañia</b>
                     <b attrs="{'invisible': [('type', '!=', 'invoice')]}">Dirección de facturación</b>

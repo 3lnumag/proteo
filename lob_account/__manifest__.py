@@ -14,7 +14,7 @@
     'category': 'Uncategorized',
     'version': '14.0.1',
 
-    'depends': ['base', 'contacts', 'account', 'l10n_mx_edi', 'lob', 'base_address_extended'],
+    'depends': ['base', 'contacts', 'account', 'l10n_mx_edi', 'lob'],
 
     'data': [
         'security/groups.xml',
@@ -23,7 +23,7 @@
         'views/account_move_view.xml',
         'views/res_partner_view.xml',
         'views/account_journal_view.xml',
-        'views/lob_account_report_invoice.xml',
+        'views/l10n_mx_edi_report_invoice.xml',
         'wizard/document_wizard.xml',
     ],
 
