@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Lob extensión de facturación",
+    'name': "Extensión de facturación",
 
-    'summary': """Catalogo facturación""",
+    'summary': """LOB y extensión de facturación""",
 
     'description': """
     """,
@@ -24,7 +24,7 @@
         'views/res_partner_view.xml',
         'views/account_journal_view.xml',
         'views/l10n_mx_edi_report_invoice.xml',
-        'report/lobextend_reporting_views.xml',
+        'report/payment_reporting_views.xml',
         'wizard/document_wizard.xml',
     ],
 

@@ -3,8 +3,8 @@
 from odoo import fields, models, tools
 
 
-class LobextendReporting(models.Model):
-   _name = 'lobextend.reporting'
+class PaymentReporting(models.Model):
+   _name = 'payment.reporting'
    _auto = False
    _description = 'Informe pendiente de pago'
 
@@ -32,7 +32,7 @@ class LobextendReporting(models.Model):
    def init(self):
       tools.drop_view_if_exists(self.env.cr, self._table)
       query = """
-CREATE OR REPLACE VIEW lobextend_reporting AS
+CREATE OR REPLACE VIEW payment_reporting AS
 SELECT ROW_NUMBER() OVER(ORDER BY t.move_id) AS id, * FROM (SELECT am.name AS name, am.state AS state, am.invoice_origin AS invoice_origin, am.business_line_id AS business_line_id, am.id AS move_id, am.currency_id AS currency_id, am.invoice_date AS invoide_date, 
 pt.categ_id AS categ_id, 
 am.serie AS serie, am.folio AS folio, 

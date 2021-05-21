@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <odoo>
-    <record id="lobextend_reporting_view_tree" model="ir.ui.view">
-        <field name="name">lobextend.reporting.tree</field>
-        <field name="model">lobextend.reporting</field>
+    <record id="payment_reporting_view_tree" model="ir.ui.view">
+        <field name="name">payment.reporting.tree</field>
+        <field name="model">payment.reporting</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="currency_id" invisible="1"/>
@@ -21,9 +21,9 @@
             </tree>
         </field>
     </record>
-    <record id="lobextend_reporting_view_graph" model="ir.ui.view">
-        <field name="name">lobextend.reporting.graph</field>
-        <field name="model">lobextend.reporting</field>
+    <record id="payment_reporting_view_graph" model="ir.ui.view">
+        <field name="name">payment.reporting.graph</field>
+        <field name="model">payment.reporting</field>
         <field name="arch" type="xml">
             <graph type="bar">
                 <field name="invoide_date"/>
@@ -31,9 +31,9 @@
             </graph>
         </field>
     </record>
-    <record id="lobextend_reporting_view_pivot" model="ir.ui.view">
+    <record id="payment_reporting_view_pivot" model="ir.ui.view">
         <field name="name">Scale Reporting Pivot</field>
-        <field name="model">lobextend.reporting</field>
+        <field name="model">payment.reporting</field>
         <field name="arch" type="xml">
             <pivot>
                 <field name="invoide_date" type="row"/>
@@ -41,9 +41,9 @@
             </pivot>
         </field>
     </record>
-    <record id="lobextend_reporting_view_search" model="ir.ui.view">
-        <field name="name">lobextend.reporting.search</field>
-        <field name="model">lobextend.reporting</field>
+    <record id="payment_reporting_view_search" model="ir.ui.view">
+        <field name="name">payment.reporting.search</field>
+        <field name="model">payment.reporting</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
@@ -67,12 +67,12 @@
             </search>
         </field>
     </record>
-    <record id="lobextend_reporting_model_action" model="ir.actions.act_window">
+    <record id="payment_reporting_model_action" model="ir.actions.act_window">
         <field name="name">Reporte cartera de pago</field>
-        <field name="res_model">lobextend.reporting</field>
+        <field name="res_model">payment.reporting</field>
         <field name="view_mode">tree,graph,pivot</field>
     </record>
 
-    <menuitem name="Cartera de pago" id="lobextend_reporting_menu"
-              parent="account.menu_finance_reports" action="lobextend_reporting_model_action"/>
+    <menuitem name="Cartera de pago" id="payment_reporting_menu"
+              parent="account.menu_finance_reports" action="payment_reporting_model_action"/>
 </odoo>
