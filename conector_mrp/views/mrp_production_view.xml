@@ -14,7 +14,7 @@
                 <field name="asys"/>
             </xpath>
             <xpath expr="//header">
-                <button name="enviar" string="Enviar" type="object"
+                <button name="enviar" string="Enviar a asys" type="object"
                         attrs="{'invisible':[('asys','=',False)]}"
                         class="oe_highlight"/>
             </xpath>
