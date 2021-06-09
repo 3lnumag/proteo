@@ -24,6 +24,7 @@ class MrpProduction(models.Model):
          'content-type': 'application/json'
       }
       data = self._data()
+      _logger.info(data)
 
       response = requests.post(url, data=json.dumps(data), headers=headers)
       _logger.info(response)
