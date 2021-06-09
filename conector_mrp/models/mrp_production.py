@@ -44,9 +44,9 @@ class MrpProduction(models.Model):
       dic['product_code_produce'] = self.product_id.default_code
       dic['quantity_produce'] = self.product_qty
 
-      dic2 = {}
 
       for l in self.move_raw_ids:
+         dic2 = {}
          dic2['product_name'] = l.product_id.name
          dic2['product_code'] = l.product_id.default_code
          dic2['target_weight'] = l.product_uom_qty
