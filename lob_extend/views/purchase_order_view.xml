@@ -9,6 +9,10 @@
                 <field name="business_line_id" attrs="{'readonly': [('state','in',['purchase', 'done', 'cancel'])]}"
                        groups="lob.group_lob" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}"/>
             </xpath>
+            <xpath expr="//page[@name='products']/field[@name='order_line']/tree/field[@name='product_qty']"
+                   position="attributes">
+                <attribute name="sum">suma</attribute>
+            </xpath>
         </field>
     </record>
     <record id="purchase_order_view_tree_inherit_lob_extend" model="ir.ui.view">

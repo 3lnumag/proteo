@@ -10,6 +10,10 @@
                        groups="lob.group_lob" options="{'no_create': True, 'no_create_edit':True, 'no_open':True}"/>
                 <field name="project_id"/>
             </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']"
+                   position="attributes">
+                <attribute name="sum">suma</attribute>
+            </xpath>
             <xpath expr="//group[1]" position="before">
                 <group>
                     <field name="serie" attrs="{'invisible':[('move_type','not in',['in_invoice', 'in_refund'])]}"/>
