@@ -13,9 +13,13 @@
             <xpath expr="//group[1]/group[1]/field[last()]" position="after">
                 <field name="asys"/>
             </xpath>
+            <xpath expr="//group[1]/group[2]/field[last()]" position="after">
+                    <field name="asys_state" attrs="{'invisible':[('asys','=',False)]}"/>
+                    <field name="asys_error" attrs="{'invisible':[('asys','=',False)]}"/>
+            </xpath>
             <xpath expr="//header">
-                <button name="enviar" string="Enviar a asys" type="object"
-                        attrs="{'invisible':[('asys','=',False)]}"
+                <button name="enviar" string="Enviar a Asys" type="object"
+                        attrs="{'invisible':['|','|',('asys','=',False),('reservation_state','!=', 'assigned'),('asys_state', '=', 'send')]}"
                         class="oe_highlight"/>
             </xpath>
         </field>
