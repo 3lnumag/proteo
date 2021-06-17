@@ -41,6 +41,11 @@
             <xpath expr="//field[last()]" position="after">
                 <field name="business_line_id" optional="show"/>
                 <field name="project_id" optional="show"/>
+                <field name="currency_id" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_partner_display_name']" position="after">
+                <field name="serie" optional="show"/>
+                <field name="folio" optional="show"/>
             </xpath>
         </field>
     </record>
@@ -53,6 +58,8 @@
             <xpath expr="//group[1]/filter[last()]" position="after">
                 <separator/>
                 <filter string="Proyecto" name="project" context="{'group_by': 'project_id'}"/>
+                <filter string="Serie" name="serie" context="{'group_by': 'serie'}"/>
+                <filter string="Moneda" name="moneda" context="{'group_by': 'currency_id'}"/>
                 <filter string="Línea de negocio" name="linea" context="{'group_by': 'business_line_id'}"/>
             </xpath>
         </field>
