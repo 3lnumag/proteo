@@ -42,11 +42,16 @@
                 <field name="business_line_id" optional="show"/>
                 <field name="project_id" optional="show"/>
                 <field name="currency_id" optional="show"/>
+                <field name="amount_residual" string="Importe adeudado en moneda" optional="show"/>
+                <field name="amount_total" string="Total en moneda" optional="show"/>
             </xpath>
             <xpath expr="//field[@name='invoice_partner_display_name']" position="after">
                 <field name="serie" optional="show"/>
                 <field name="folio" optional="show"/>
             </xpath>
+            <field name="invoice_date_due" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
         </field>
     </record>
     <!--Search-->

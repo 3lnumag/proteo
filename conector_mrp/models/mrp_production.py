@@ -50,6 +50,7 @@ class MrpProduction(models.Model):
 
         for l in self.move_raw_ids:
             dic2 = {}
+            dic2['stock_move_id'] = l.id
             dic2['product_name'] = l.product_id.name
             dic2['product_code'] = l.product_id.default_code
             dic2['target_weight'] = l.product_uom_qty
