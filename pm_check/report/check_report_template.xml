@@ -49,6 +49,10 @@
                         border-collapse: collapse;
                         border-spacing: 0;
                         }
+                        td {
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size:14px;
+                        }
 
                     </style>
                     <t t-set="currency_t" t-value="'M.E.'"/>
@@ -64,8 +68,15 @@
 
                     <!--Templates cheques-->
                     <t t-if="doc.journal_id.check_type">
-                        <t t-call="pm_check.banamex_template"/>
-                        <t t-call="pm_check.bancomer_template"/>
+                        <t t-if="doc.journal_id.check_type=='bm'">
+                            <t t-call="pm_check.banamex_template"/>
+                        </t>
+                        <t t-elif="doc.journal_id.check_type=='bc'">
+                            <t t-call="pm_check.bancomer_template"/>
+                        </t>
+                        <t t-elif="doc.journal_id.check_type=='hs'">
+                            <t t-call="pm_check.hsbc_template"/>
+                        </t>
                     </t>
                 </div>
             </t>

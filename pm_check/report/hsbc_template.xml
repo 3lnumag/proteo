@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="bancomer_template">
-        <div style="padding-left:25px;padding-top:60px;">
+    <template id="hsbc_template">
+        <div tyle="padding-left:25px;padding-top:60px;">
             <!--Fecha-->
             <table style="margin-bottom:20px;">
                 <col style="width:600px;"/>

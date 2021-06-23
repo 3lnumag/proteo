@@ -20,6 +20,7 @@
         'report/check_report.xml',
         'report/banamex_template.xml',
         'report/bancomer_template.xml',
+        'report/hsbc_template.xml',
         'report/check_report_template.xml',
         'views/account_journal_view.xml',
         'views/account_payment_view.xml',

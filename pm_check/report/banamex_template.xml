@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="banamex_template">
-        <div t-if="doc.journal_id.check_type=='bm'" style="padding-left:25px;padding-top:100px;">
+        <div style="padding-left:25px;padding-top:100px;">
             <!--Fecha-->
             <table style="margin-bottom:20px;width:900px;height:20px;">
                 <col style="width:600px;"/>
