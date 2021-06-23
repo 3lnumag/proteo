@@ -15,8 +15,8 @@ class MrpProduction(models.Model):
 
     asys = fields.Boolean('ASYS', default=False, copy=False)
 
-    asys_state = fields.Selection([('send', 'Recibido'), ('error', 'No válido')], 'Estado Asys', default=None, readonly=True)
-    asys_error = fields.Text('Error Asys', readonly=True)
+    asys_state = fields.Selection([('send', 'Recibido'), ('error', 'No válido')], 'Estado Asys', default=None, readonly=True, copy=False)
+    asys_error = fields.Text('Error Asys', readonly=True, copy=False)
 
     def enviar(self):
 
