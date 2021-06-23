@@ -3,7 +3,7 @@
     <template id="bancomer_template">
         <div style="padding-left:40px;padding-top:75px;">
             <!--Fecha-->
-            <table style="margin-bottom:100px;">
+            <table style="margin-bottom:75px;">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
                 <tr>
@@ -12,7 +12,7 @@
                 </tr>
             </table>
             <!--Nombre del proveedor-->
-            <table style="margin-bottom:10px;">
+            <table style="margin-bottom:20px;">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
                 <tr>
@@ -21,38 +21,38 @@
                 </tr>
             </table>
             <!--;Monto con letra-->
-            <table style="margin-bottom:240px;width:800px;height:30px;">
+            <table style="margin-bottom:260px;width:800px;height:30px;">
                 <col style="width:800px;"/>
                 <tr>
                     <td class="pl-1 align-bottom"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
-            <table style="margin-bottom:100px;">
+            <table style="margin-bottom:80px;">
                 <col style="width:150px;"/>
-                <col style="width:450px;"/>
-                <tr>
+                <col style="width:400px;"/>
+                <tr style="height:28px;">
                     <td class="pl-1">Cuenta Número:</td>
                     <td class="pl-1"><span t-field="doc.journal_id.bank_reference"/></td>
                 </tr>
-                <tr>
+                <tr  style="height:28px;">
                     <td class="pl-1">Cheque Número:</td>
                     <td>
                         <table>
                             <col style="width:150px;"/>
                             <col style="width:50px;"/>
                             <col style="width:30px;"/>
-                            <col style="width:220px;"/>
+                            <col style="width:170px;"/>
                             <tr>
                                 <td class="pl-1"><span t-field="doc.check_number"/></td>
-                                <td class="pl-1">POR</td>
+                                <td class="pl-1">por</td>
                                 <td class="pl-1">$</td>
                                 <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-                <tr>
+                <tr  style="height:28px;">
                     <td class="pl-1">Beneficiario:</td>
                     <td class="pl-1">
                         <span t-field="doc.partner_id.name"/>
@@ -62,7 +62,7 @@
             <!--Debe y haber-->
             <t t-set="total_debit" t-value="0.00"/>
             <t t-set="total_credit" t-value="0.00"/>
-            <table style="margin-bottom:10mm;">
+            <table style="margin-bottom:20px;">
                 <col style="width:120px;"/>
                 <col style="width:120px;"/>
                 <col style="width:300px;"/>
