@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="bancomer_template">
-        <div style="padding-left:25px;padding-top:60px;">
+        <div style="padding-left:40px;padding-top:75px;">
             <!--Fecha-->
-            <table style="margin-bottom:20px;">
+            <table style="margin-bottom:100px;">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
                 <tr>
@@ -11,8 +11,8 @@
                     <td class="text-center"><span t-field="doc.date"/></td>
                 </tr>
             </table>
-            <!--Nombre del proveedor y monto-->
-            <table style="margin-bottom:20px;">
+            <!--Nombre del proveedor-->
+            <table style="margin-bottom:10px;">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
                 <tr>
@@ -21,16 +21,16 @@
                 </tr>
             </table>
             <!--;Monto con letra-->
-            <table style="margin-bottom:60mm;width:800px;height:35px;">
+            <table style="margin-bottom:240px;width:800px;height:30px;">
                 <col style="width:800px;"/>
                 <tr>
                     <td class="pl-1 align-bottom"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
-            <table style="margin-bottom:200px;">
-                <col style="width:120px;"/>
-                <col style="width:480px;"/>
+            <table style="margin-bottom:100px;">
+                <col style="width:150px;"/>
+                <col style="width:450px;"/>
                 <tr>
                     <td class="pl-1">Cuenta Número:</td>
                     <td class="pl-1"><span t-field="doc.journal_id.bank_reference"/></td>
@@ -42,7 +42,7 @@
                             <col style="width:150px;"/>
                             <col style="width:50px;"/>
                             <col style="width:30px;"/>
-                            <col style="width:250px;"/>
+                            <col style="width:220px;"/>
                             <tr>
                                 <td class="pl-1"><span t-field="doc.check_number"/></td>
                                 <td class="pl-1">POR</td>
