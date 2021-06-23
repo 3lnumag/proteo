@@ -5,9 +5,9 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//notebook/page[@name='sales_purchases']/group[1]/group[@name='misc']" position="inside">
-                    <field name="payment_method_id"/>
-                    <field name="edi_usage"/>
+            <xpath expr="//field[@name='property_account_position_id']" position="after">
+                <field name="payment_method_id"/>
+                <field name="edi_usage"/>
             </xpath>
         </field>
     </record>
