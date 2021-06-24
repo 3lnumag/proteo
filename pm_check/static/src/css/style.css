@@ -7,6 +7,7 @@ margin: 0; padding: 0; border: 0; outline: none;
 body
 {
 line-height: 1;
+font-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -35,10 +36,10 @@ width:1000px;
 margin-bottom:70px;
 }
 .proveedor_bbva{
-margin-bottom:8px;
+margin-bottom:11px;
 }
 .monto_bbva{
-margin-bottom:260px;
+margin-bottom:259px;
 width:800px;
 height:30px;
 }
