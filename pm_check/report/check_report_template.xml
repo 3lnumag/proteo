@@ -15,7 +15,7 @@
                     </t>
 
                     <t t-set="word"
-                       t-value="'---(' + doc.currency_id.amount_to_text2(doc.amount).upper() + ' ' + currency_t + ')---'"/>
+                       t-value="'--(' + doc.currency_id.amount_to_text2(doc.amount).upper() + ' ' + currency_t + ')--'"/>
 
                     <!--Templates cheques-->
                     <t t-if="doc.journal_id.check_type">

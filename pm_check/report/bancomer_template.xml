@@ -8,7 +8,7 @@
                 <col style="width:300px;"/>
                 <tr>
                     <td></td>
-                    <td class="text-center"><span style="font-size:20px;" t-field="doc.date"/></td>
+                    <td class="text-center"><span style="font-size:18px;" t-field="doc.date"/></td>
                 </tr>
             </table>
             <!--Nombre del proveedor-->
@@ -24,7 +24,7 @@
             <table class="monto_bbva">
                 <col style="width:800px;"/>
                 <tr>
-                    <td class="pl-1 align-bottom" style="font-size:14px;"><span t-esc="word"/></td>
+                    <td class="pl-1 align-bottom" style="font-size:12px;"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
