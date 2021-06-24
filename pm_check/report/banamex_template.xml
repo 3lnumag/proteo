@@ -15,9 +15,9 @@
             <table class="proveedor_bmex">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
-                <tr style="height:20px;">
-                    <td class="pl-1"><span class="font-weight-bold" t-field="doc.partner_id.name"/></td>
-                    <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
+                <tr style="height:30px;">
+                    <td class="pl-1 align-bottom"><span class="font-weight-bold" t-field="doc.partner_id.name"/></td>
+                    <td class="text-right align-bottom"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                 </tr>
             </table>
             <!--;Monto con letra-->
