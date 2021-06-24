@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="banamex_template">
-        <div style="padding-left:25px;padding-top:100px;">
+        <div class="bmex">
             <!--Fecha-->
-            <table style="margin-bottom:20px;width:900px;height:20px;">
+            <table class="fecha_bmex">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
                 <tr>
                     <td></td>
-                    <td class="text-center"><span t-field="doc.date"/></td>
+                    <td class="text-center"><span style="font-size:20px;" t-field="doc.date"/></td>
                 </tr>
             </table>
-            <!--Nombre del proveedor y monto-->
-            <table style="margin-bottom:20px;width:900px;height:20px;">
+            <!--Nombre del proveedor-->
+            <table class="proveedor_bmex">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
-                <tr>
-                    <td class="pl-1"><span t-field="doc.partner_id.name"/></td>
+                <tr style="height:20px;">
+                    <td class="pl-1"><span class="font-weight-bold" t-field="doc.partner_id.name"/></td>
                     <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                 </tr>
             </table>
             <!--;Monto con letra-->
-            <table style="margin-bottom:200px;width:800px;height:35px;">
+            <table class="monto_bmex">
                 <col style="width:800px;"/>
                 <tr>
-                    <td class="pl-1 align-bottom"><span t-esc="word"/></td>
+                    <td class="pl-1 align-bottom" style="font-size:14px;"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
-            <table style="margin-bottom:100px;">
+            <table class="concepto_bmex">
                 <col style="width:150px;"/>
-                <col style="width:450px;"/>
-                <tr>
-                    <td class="pl-1">Cuenta Número:</td>
+                <col style="width:400px;"/>
+                <tr style="height:28px;">
+                    <td class="pl-1 font-weight-bold">Cuenta Número:</td>
                     <td class="pl-1"><span t-field="doc.journal_id.bank_reference"/></td>
                 </tr>
-                <tr>
-                    <td class="pl-1">Cheque Número:</td>
+                <tr style="height:28px;">
+                    <td class="pl-1 font-weight-bold">Cheque Número:</td>
                     <td>
                         <table>
-                            <col style="width:180px;"/>
+                            <col style="width:150px;"/>
                             <col style="width:50px;"/>
-                            <col style="width:40px;"/>
-                            <col style="width:180px;"/>
+                            <col style="width:30px;"/>
+                            <col style="width:170px;"/>
                             <tr>
                                 <td class="pl-1"><span t-field="doc.check_number"/></td>
-                                <td class="pl-1">POR</td>
-                                <td class="pl-1">$</td>
+                                <td class="pl-1 font-weight-bold">por</td>
+                                <td class="pl-1 font-weight-bold">$</td>
                                 <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
-                <tr>
-                    <td class="pl-1">Beneficiario:</td>
+                <tr style="height:28px;">
+                    <td class="pl-1 font-weight-bold">Beneficiario:</td>
                     <td class="pl-1">
                         <span t-field="doc.partner_id.name"/>
                     </td>
@@ -62,7 +62,7 @@
             <!--Debe y haber-->
             <t t-set="total_debit" t-value="0.00"/>
             <t t-set="total_credit" t-value="0.00"/>
-            <table style="margin-bottom:50px;">
+            <table class="debe_bmex">
                 <col style="width:120px;"/>
                 <col style="width:120px;"/>
                 <col style="width:300px;"/>
@@ -71,12 +71,14 @@
                 <col style="width:120px;"/>
                 <t t-foreach="doc.move_id.line_ids" t-as="line">
                     <tr>
-                        <td class="pl-1 pb-4"></td>
-                        <td class="pl-1"><span t-field="line.account_id.code"/></td>
+                        <td class="pl-1 pb-3 text-right"><span t-field="line.account_id.code"/></td>
+                        <td class="pl-1"></td>
                         <td class="pl-1"><span t-field="line.account_id.name"/></td>
                         <td class="pl-1"></td>
-                        <td class="text-right"><t t-if="line.debit!=0.00"><span t-esc="'{0:,.2f}'.format(line.debit)"/></t></td>
-                        <td class="text-right"><t t-if="line.credit!=0.00"><span t-esc="'{0:,.2f}'.format(line.credit)"/></t></td>
+                        <td class="text-right"><t t-if="line.debit!=0.00"><span
+                                t-esc="'{0:,.2f}'.format(line.debit)"/></t></td>
+                        <td class="text-right"><t t-if="line.credit!=0.00"><span
+                                t-esc="'{0:,.2f}'.format(line.credit)"/></t></td>
                     </tr>
                     <t t-set="total_debit" t-value="total_debit + line.debit"/>
                     <t t-set="total_credit" t-value="total_credit + line.credit"/>
@@ -99,7 +101,7 @@
                     <td class="text-right"><span t-esc="'{0:,.2f}'.format(total_credit)"/></td>
                 </tr>
             </table>
-            <!--Concepto-->
+            <!--Observaciones-->
             <table>
                 <col style="width:120px;"/>
                 <col style="width:420px;"/>
