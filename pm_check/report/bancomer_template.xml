@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="bancomer_template">
-        <div style="padding-left:40px;padding-top:73px;">
+        <div class="bbva">
             <!--Fecha-->
-            <table style="margin-bottom:76px;">
+            <table class="fecha_bbva">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
                 <tr>
@@ -12,7 +12,7 @@
                 </tr>
             </table>
             <!--Nombre del proveedor-->
-            <table style="margin-bottom:8px;">
+            <table class="proveedor_bbva">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
                 <tr style="height:11px;">
@@ -25,22 +25,22 @@
                 </tr>
             </table>
             <!--;Monto con letra-->
-            <table style="margin-bottom:260px;width:800px;height:30px;">
+            <table class="monto_bbva">
                 <col style="width:800px;"/>
                 <tr>
                     <td class="pl-1 align-bottom" style="font-size:12px;"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
-            <table style="margin-bottom:100px;">
+            <table class="concepto_bbva">
                 <col style="width:150px;"/>
                 <col style="width:400px;"/>
                 <tr style="height:28px;">
                     <td class="pl-1  font-weight-bold">Cuenta Número:</td>
                     <td class="pl-1"><span t-field="doc.journal_id.bank_reference"/></td>
                 </tr>
-                <tr  style="height:28px;">
-                    <td class="pl-1  font-weight-bold">Cheque Número:</td>
+                <tr style="height:28px;">
+                    <td class="pl-1 font-weight-bold">Cheque Número:</td>
                     <td>
                         <table>
                             <col style="width:150px;"/>
@@ -56,8 +56,8 @@
                         </table>
                     </td>
                 </tr>
-                <tr  style="height:28px;">
-                    <td class="pl-1  font-weight-bold">Beneficiario:</td>
+                <tr style="height:28px;">
+                    <td class="pl-1 font-weight-bold">Beneficiario:</td>
                     <td class="pl-1">
                         <span t-field="doc.partner_id.name"/>
                     </td>
@@ -66,7 +66,7 @@
             <!--Debe y haber-->
             <t t-set="total_debit" t-value="0.00"/>
             <t t-set="total_credit" t-value="0.00"/>
-            <table style="margin-bottom:20px;">
+            <table class="debe_bbva">
                 <col style="width:120px;"/>
                 <col style="width:120px;"/>
                 <col style="width:300px;"/>
@@ -103,7 +103,7 @@
                     <td class="text-right"><span t-esc="'{0:,.2f}'.format(total_credit)"/></td>
                 </tr>
             </table>
-            <!--Concepto-->
+            <!--Observaciones-->
             <table>
                 <col style="width:120px;"/>
                 <col style="width:420px;"/>

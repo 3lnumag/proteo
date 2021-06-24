@@ -5,6 +5,7 @@
         <t t-call="web.basic_layout">
             <t t-foreach="docs" t-as="doc">
                 <div class="page">
+                    <link href="/pm_check/static/src/css/style.css" rel="stylesheet" type="text/css"/>
                     <t t-set="currency_t" t-value="'M.E.'"/>
                     <t t-if="doc.currency_id == env.company.currency_id">
                         <t t-set="currency_t" t-value="'M.N'"/>
