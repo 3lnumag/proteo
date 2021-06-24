@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <template id="bancomer_template">
-        <div style="padding-left:40px;padding-top:75px;">
+        <div style="padding-left:40px;padding-top:73px;">
             <!--Fecha-->
-            <table style="margin-bottom:75px;">
+            <table style="margin-bottom:76px;">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
                 <tr>
                     <td></td>
-                    <td class="text-center"><span t-field="doc.date"/></td>
+                    <td class="text-center"><span style="font-size:18px;" t-field="doc.date"/></td>
                 </tr>
             </table>
             <!--Nombre del proveedor-->
-            <table style="margin-bottom:20px;">
+            <table style="margin-bottom:8px;">
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
-                <tr>
-                    <td class="pl-1"><span t-field="doc.partner_id.name"/></td>
+                <tr style="height:11px;">
+                    <td class="pl-1"><span class="font-weight-bold" t-field="doc.partner_id.name"/></td>
+                    <td></td>
+                </tr>
+                <tr style="height:11px;">
+                    <td></td>
                     <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                 </tr>
             </table>
@@ -24,19 +28,19 @@
             <table style="margin-bottom:260px;width:800px;height:30px;">
                 <col style="width:800px;"/>
                 <tr>
-                    <td class="pl-1 align-bottom"><span t-esc="word"/></td>
+                    <td class="pl-1 align-bottom" style="font-size:12px;"><span t-esc="word"/></td>
                 </tr>
             </table>
             <!--Concepto del pago-->
-            <table style="margin-bottom:80px;">
+            <table style="margin-bottom:100px;">
                 <col style="width:150px;"/>
                 <col style="width:400px;"/>
                 <tr style="height:28px;">
-                    <td class="pl-1">Cuenta Número:</td>
+                    <td class="pl-1  font-weight-bold">Cuenta Número:</td>
                     <td class="pl-1"><span t-field="doc.journal_id.bank_reference"/></td>
                 </tr>
                 <tr  style="height:28px;">
-                    <td class="pl-1">Cheque Número:</td>
+                    <td class="pl-1  font-weight-bold">Cheque Número:</td>
                     <td>
                         <table>
                             <col style="width:150px;"/>
@@ -45,15 +49,15 @@
                             <col style="width:170px;"/>
                             <tr>
                                 <td class="pl-1"><span t-field="doc.check_number"/></td>
-                                <td class="pl-1">por</td>
-                                <td class="pl-1">$</td>
+                                <td class="pl-1 font-weight-bold">por</td>
+                                <td class="pl-1 font-weight-bold">$</td>
                                 <td class="text-right"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr  style="height:28px;">
-                    <td class="pl-1">Beneficiario:</td>
+                    <td class="pl-1  font-weight-bold">Beneficiario:</td>
                     <td class="pl-1">
                         <span t-field="doc.partner_id.name"/>
                     </td>
