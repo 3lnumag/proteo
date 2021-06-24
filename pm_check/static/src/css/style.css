@@ -21,8 +21,8 @@ ul, ol
 list-style: none;
 }
 td {
-font-family: Arial, Helvetica, sans-serif;
-font-size:16px;
+font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+font-size:20px;
 }
 
 /***********BBVA*************/
@@ -47,4 +47,7 @@ margin-bottom:100px;
 }
 .debe_bbva{
 margin-bottom:20px;
+}
+.debe_bbva td{
+font-size:14px;
 }
