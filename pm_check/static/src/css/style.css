@@ -84,7 +84,7 @@ font-size:14px;
 /***********HSBC*************/
 .hsbc{
 padding-left:20px;
-padding-top:85px;
+padding-top:75px;
 width:1000px;
 }
 .fecha_hsbc{
@@ -94,12 +94,12 @@ margin-bottom:60px;
 margin-bottom:2px;
 }
 .monto_hsbc{
-margin-bottom:235px;
+margin-bottom:240px;
 width:800px;
 height:30px;
 }
 .concepto_hsbc{
-margin-bottom:80px;
+margin-bottom:85px;
 }
 .debe_hsbc{
 margin-bottom:20px;
