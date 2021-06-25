@@ -23,7 +23,7 @@
             <!--;Monto con letra-->
             <table class="monto_bbva">
                 <col style="width:800px;"/>
-                <tr>
+                <tr style="height:30px;">
                     <td class="pl-1 align-bottom" style="font-size:12px;"><span t-esc="word"/></td>
                 </tr>
             </table>

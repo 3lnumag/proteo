@@ -83,18 +83,18 @@ font-size:14px;
 
 /***********HSBC*************/
 .hsbc{
-padding-left:33px;
+padding-left:20px;
 padding-top:110px;
 width:1000px;
 }
 .fecha_hsbc{
-margin-bottom:70px;
+margin-bottom:60px;
 }
 .proveedor_hsbc{
 margin-bottom:2px;
 }
 .monto_hsbc{
-margin-bottom:238px;
+margin-bottom:220px;
 width:800px;
 height:30px;
 }
