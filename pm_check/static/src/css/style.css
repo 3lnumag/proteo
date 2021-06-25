@@ -28,7 +28,7 @@ font-size:16px;
 
 /***********BBVA*************/
 .bbva{
-padding-left:40px;
+padding-left:30px;
 padding-top:67px;
 width:1000px;
 }
@@ -64,10 +64,10 @@ width:1000px;
 margin-bottom:32px;
 }
 .proveedor_bmex{
-margin-bottom:10px;
+margin-bottom:9px;
 }
 .monto_bmex{
-margin-bottom:260px;
+margin-bottom:262px;
 width:800px;
 height:30px;
 }
@@ -83,12 +83,12 @@ font-size:14px;
 
 /***********HSBC*************/
 .hsbc{
-padding-left:40px;
+padding-left:33px;
 padding-top:110px;
 width:1000px;
 }
 .fecha_hsbc{
-margin-bottom:59px;
+margin-bottom:70px;
 }
 .proveedor_hsbc{
 margin-bottom:2px;
