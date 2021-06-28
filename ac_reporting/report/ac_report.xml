@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--Report-->
+    <record id="ac_report" model="ir.actions.report">
+        <field name="name">Apuntes contables</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ac_reporting.ac_report_template</field>
+        <field name="report_file">ac_reporting.ac_report_template</field>
+        <field name="print_report_name">('Apuntes contables - (%s)' % object.name)</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form</field>
+    </record>
+</odoo>
