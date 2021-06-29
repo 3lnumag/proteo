@@ -7,8 +7,8 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div>
-                            <h2 class="float-left" style="font-size:23px">
-                                <span t-field="doc.name" class="ml-1"/>
+                            <h2 class="float-left" style="font-size:25px">
+                                <span t-field="doc.name"/>
                             </h2>
                         </div>
                         <div class="row mt-4">
@@ -54,6 +54,18 @@
 
                                         </tr>
                                     </t>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
+                                            <span t-esc="sum(doc.line_ids.mapped('debit'))" t-options='{"widget": "float", "precision": dig}'/>
+                                        </td>
+                                        <td>
+                                            <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
+                                            <span t-esc="sum(doc.line_ids.mapped('debit'))" t-options='{"widget": "float", "precision": dig}'/>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
