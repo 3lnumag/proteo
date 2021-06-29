@@ -18,14 +18,38 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-6">
-                                <div>
+                                <div t-if="doc.partner_id.name">
+                                    <strong>Cliente/Proveedor:</strong><span t-field="doc.partner_id.name"
+                                                                             class="ml-1"/>
+                                </div>
+                                <div t-if="doc.journal_id">
                                     <strong>Diario:</strong><span t-field="doc.journal_id.name" class="ml-1"/>
                                 </div>
-                                <div>
+                                <div t-if="doc.currency_id">
                                     <strong>Moneda:</strong><span t-field="doc.currency_id.name" class="ml-1"/>
                                 </div>
-                                <div>
+                                <div t-if="doc.ref">
                                     <strong>Referencia:</strong><span t-field="doc.ref" class="ml-1"/>
+                                </div>
+                                <div t-if="doc.payment_reference">
+                                    <strong>Referencia de pago:</strong><span t-field="doc.payment_reference" class="ml-1"/>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div t-if="doc.l10n_mx_edi_payment_method_id and doc.l10n_mx_edi_cfdi_request">
+                                    <strong>Forma de pago:</strong><span
+                                        t-field="doc.l10n_mx_edi_payment_method_id.name" class="ml-1"/>
+                                </div>
+                                <div t-if="doc.l10n_mx_edi_payment_policy and doc.l10n_mx_edi_cfdi_request">
+                                    <strong>Política de pago:</strong><span t-field="doc.l10n_mx_edi_payment_policy"
+                                                                            class="ml-1"/>
+                                </div>
+                                <div t-if="doc.l10n_mx_edi_usage and doc.l10n_mx_edi_cfdi_request">
+                                    <strong>Uso:</strong><span t-field="doc.l10n_mx_edi_usage" class="ml-1"/>
+                                </div>
+                                <div t-if="doc.l10n_mx_edi_cfdi_uuid and doc.l10n_mx_edi_cfdi_request">
+                                    <strong>Folio Fiscal:</strong><span t-field="doc.l10n_mx_edi_cfdi_uuid"
+                                                                        class="ml-1"/>
                                 </div>
                             </div>
                         </div>
