@@ -7,7 +7,7 @@
                 <t t-call="web.external_layout">
                     <div class="page">
                         <div>
-                            <h2 class="float-left" style="font-size:25px">
+                            <h2 class="float-left" style="font-size:30px">
                                 <span t-field="doc.name"/>
                             </h2>
                         </div>
@@ -19,10 +19,13 @@
                         <div class="row mt-4">
                             <div class="col-6">
                                 <div>
-                                    <strong>Referencia:</strong><span t-field="doc.ref" class="ml-1"/>
+                                    <strong>Diario:</strong><span t-field="doc.journal_id.name" class="ml-1"/>
                                 </div>
                                 <div>
-                                    <strong>Diario:</strong><span t-field="doc.journal_id.name" class="ml-1"/>
+                                    <strong>Moneda:</strong><span t-field="doc.currency_id.name" class="ml-1"/>
+                                </div>
+                                <div>
+                                    <strong>Referencia:</strong><span t-field="doc.ref" class="ml-1"/>
                                 </div>
                             </div>
                         </div>
@@ -59,11 +62,13 @@
                                         <td></td>
                                         <td>
                                             <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
-                                            <span t-esc="sum(doc.line_ids.mapped('debit'))" t-options='{"widget": "float", "precision": dig}'/>
+                                            <strong class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('debit'))"
+                                                    t-options='{"widget": "float", "precision": dig}'/>
                                         </td>
                                         <td>
                                             <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
-                                            <span t-esc="sum(doc.line_ids.mapped('debit'))" t-options='{"widget": "float", "precision": dig}'/>
+                                            <strong class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('debit'))"
+                                                    t-options='{"widget": "float", "precision": dig}'/>
                                         </td>
                                     </tr>
                                 </tbody>
