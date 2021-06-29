@@ -32,7 +32,8 @@
                                     <strong>Referencia:</strong><span t-field="doc.ref" class="ml-1"/>
                                 </div>
                                 <div t-if="doc.payment_reference">
-                                    <strong>Referencia de pago:</strong><span t-field="doc.payment_reference" class="ml-1"/>
+                                    <strong>Referencia de pago:</strong><span t-field="doc.payment_reference"
+                                                                              class="ml-1"/>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -85,14 +86,12 @@
                                         <td></td>
                                         <td></td>
                                         <td>
-                                            <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
-                                            <strong class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('debit'))"
-                                                    t-options='{"widget": "float", "precision": dig}'/>
+                                            <span class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('debit'))"
+                                                  t-options='{"widget": "float", "precision": 2}'/>
                                         </td>
                                         <td>
-                                            <t t-set="dig" t-value="env.ref('product.decimal_product_uom').digits"/>
-                                            <strong class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('debit'))"
-                                                    t-options='{"widget": "float", "precision": dig}'/>
+                                            <span class="font-weight-bold" t-esc="sum(doc.line_ids.mapped('credit'))"
+                                                  t-options='{"widget": "float", "precision": 2}'/>
                                         </td>
                                     </tr>
                                 </tbody>
