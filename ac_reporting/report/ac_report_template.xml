@@ -60,8 +60,8 @@
                                     <tr>
                                         <th scope="col">CUENTA</th>
                                         <th scope="col">ETIQUETA</th>
-                                        <th scope="col">CRÉDITO</th>
                                         <th scope="col">DÉBITO</th>
+                                        <th scope="col">CRÉDITO</th>
                                     </tr>
                                 </thead>
                                 <tbody>
