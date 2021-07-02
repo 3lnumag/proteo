@@ -13,9 +13,10 @@
                    position="attributes">
                 <attribute name="sum">suma</attribute>
             </xpath>
+            <!--
             <header>
-                                    <button name="button_cancel_ws" states="draft,to approve,sent,purchase" string="Cancel" type="object"/>
-            </header>
+                <button name="button_cancel_ws" states="draft,to approve,sent,purchase" string="Cancel" type="object"/>
+            </header>-->
         </field>
     </record>
     <record id="purchase_order_view_tree_inherit_lob_extend" model="ir.ui.view">
