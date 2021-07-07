@@ -14,7 +14,7 @@
     'category': 'Uncategorized',
     'version': '14.0.1',
 
-    'depends': ['base', 'account', 'l10n_mx_edi'],
+    'depends': ['base', 'account', 'l10n_mx_edi', 'lob_account'],
 
     'data': [
         'report/check_report.xml',

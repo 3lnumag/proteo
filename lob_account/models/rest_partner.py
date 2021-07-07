@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import fields, models
+import re
 
 
 class ResPartner(models.Model):
@@ -46,3 +47,7 @@ class ResPartner(models.Model):
            'Tarjeta de Crédito, etc. Deje vacía si no conoce la forma de pago y el XML mostrará "No Identificado".',
       default=lambda self: self.env.ref('l10n_mx_edi.payment_method_otros',
                                         raise_if_not_found=False))
+
+   def filter_name(self):
+      pattern = r"[\[]{1}([\W\w]*)[\]]{1}"
+      return re.sub(pattern, '', self.name).strip()

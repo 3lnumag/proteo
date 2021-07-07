@@ -2,7 +2,7 @@
 <odoo>
     <template id="hsbc_template">
         <div class="hsbc">
-           <!--Fecha-->
+            <!--Fecha-->
             <table class="fecha_hsbc">
                 <col style="width:600px;"/>
                 <col style="width:300px;"/>
@@ -16,7 +16,8 @@
                 <col style="width:700px;"/>
                 <col style="width:200px;"/>
                 <tr style="height:30px;">
-                    <td class="pl-1 align-bottom"><span class="font-weight-bold" t-field="doc.partner_id.name"/></td>
+                    <td class="pl-1 align-bottom"><span class="font-weight-bold"
+                                                        t-esc="doc.partner_id.filter_name()"/></td>
                     <td class="text-right align-bottom"><span t-esc="'{0:,.2f}'.format(doc.amount)"/></td>
                 </tr>
             </table>
@@ -55,7 +56,7 @@
                 <tr style="height:25px;">
                     <td class="pl-1 font-weight-bold">Beneficiario:</td>
                     <td class="pl-1">
-                        <span t-field="doc.partner_id.name"/>
+                        <span t-esc="doc.partner_id.filter_name()"/>
                     </td>
                 </tr>
             </table>
@@ -113,6 +114,14 @@
                     <td></td>
                     <td></td>
                 </tr>
+                <t t-if="doc.partner_id.code">
+                    <tr>
+                        <td></td>
+                        <td class="pl-1 pb-4 pt-3"><span>Código de proveedor:</span><span class="pl-1" t-field="doc.partner_id.code"/></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </t>
             </table>
             <!--Fecha y numero de cheque-->
             <table>

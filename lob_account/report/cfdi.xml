@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- QWeb Reports -->
+    <template id="cfdi_custom" inherit_id="l10n_mx_edi.cfdiv33">
+        <xpath expr="//*[local-name() = 'Comprobante']/*[local-name() = 'Emisor']" position="attributes">
+            <attribute name="t-att-Nombre">format_string(supplier.filter_name(), 254)</attribute>
+        </xpath>
+        <xpath expr="//*[local-name() = 'Comprobante']/*[local-name() = 'Receptor']" position="attributes">
+            <attribute name="t-att-Nombre">format_string(customer.commercial_partner_id.filter_name(), 254)</attribute>
+        </xpath>
+    </template>
+</odoo>
