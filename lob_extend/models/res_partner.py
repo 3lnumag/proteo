@@ -12,8 +12,6 @@ class RestPartner(models.Model):
    code = fields.Char('Código')
    legal_representative = fields.Char('Representante legal')
 
-   is_customer = fields.Boolean('Es cliente')
-   is_supplier = fields.Boolean('Es proveedor')
 
    # @api.model
    # def _name_search(self, name, args=None, operator='ilike', limit=100,
